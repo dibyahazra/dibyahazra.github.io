@@ -1,2 +1,2 @@
-## Benchmarking In Go With Examples
+## Benchmarking In Go, with Example
 
