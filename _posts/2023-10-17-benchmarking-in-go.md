@@ -22,7 +22,7 @@ $ go test -bench . -benchmem
 
 BenchmarkRandInt-8  195960022  6.002 ns/op  0 B/op  0 allocs/op
 PASS
-ok      project        3.430s
+ok      benchmarking-example        3.430s
 ```
 
 So this is how you run a benchmark, it tells you approximately how much time it's taking for each iteration which is about 6 nanoseconds right now and it tells us that we're doing 0 allocations.
@@ -35,7 +35,7 @@ $ go test -bench . -benchmem -cpuprofile prof.cpu
 
 BenchmarkRandInt-8  216021757  5.111 ns/op  0 B/op  0 allocs/op
 PASS
-ok      personal        4.722s
+ok      benchmarking-example        4.722s
 ```
 
 One important note is that when you use `-cpuprofile` or `-memprofile` go also builds the `test` binary and that's because the profile just has binary data with no information about what symbols and so on. The binary is used to find the symbol name for those locations. So you run go tool pprof by passing the binary first and then the profile.
