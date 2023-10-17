@@ -1,5 +1,5 @@
-Here you can say lots of fun things about your site.
+Just your average everyday nerd, developer, gaming enthusiast.
 
-Maybe say a some things about yourself.
+The business side of this blog is mostly about golang, cloud, programming tips and tools.
 
-Or maybe what you plan to blog about.
+Hope you enjoy what you’re reading here!
