@@ -46,13 +46,13 @@ Duration: 4.73s, Total samples = 3.31s (70.05%)
 Entering interactive mode (type "help" for commands, "o" for options)
 (pprof)
 ```
-Now we can try out different profiling commands to investigate the performance of our function. Some of the frequestly used commands are `list <function_name>, top10, top5` etc. I will cover Profiling in much more detail later in a separate post (probably)
+Now we can try out different profiling commands to investigate the performance of our function. Some of the frequestly used commands are `list <function_name>, top10, top5` etc. I will cover Profiling in much more detail later in a separate post (probably).
 
 ### Example
-So we briefly learnt how to benchmark and profile Go code but lets understand it further with a real world example. We are going to select a coding problem that can be solved in multiple ways using Go. We will benchmark and profile each of the approaches and pick the best one in terms of CPU and Memory utiliation.
+So we briefly learnt how to benchmark and profile Go code but lets understand it further with a real world example. We are going to select a coding problem that can be solved in multiple ways using Go. We will benchmark and profile each of the approaches and pick the best one in terms of CPU and Memory utilization.
 
 #### Problem Statement
-Lets say there is a Json file with the folowing nested Json data
+Lets say there is a Json file with the following nested Json data
 ```json
 {
     "data": [
@@ -75,7 +75,7 @@ So the expected json file would look like
 #### Solution
 There are multiple ways we can solve this problem so we are going to iterate through each of the possible solutions and benchmark all these approaches and pick the best approach. At first we will create two go files lets call them `task.go` where we put our solution code and `task_test.go` where we put our benchmarking code and one json file `data.json` where we put some dummy data.
 
-1. Deserialization
+- Deserialization
 
 We can unmarshal the file, take only the `data` key and then marshal it back.
 
@@ -98,7 +98,7 @@ func BenchmarkDeserialize(b *testing.B) {
 	}
 }
 ```
-2. Strings.Trim
+- Strings.Trim
 
 Take the string representation of the data and trim the cutset from the beginning and end of the string.
 ```go
@@ -115,7 +115,7 @@ func BenchmarkTrim(b *testing.B) {
 }
 ```
 
-3. Regex
+- Regex
 
 I'm not good with Regex, so I have to use it in multiple stages. If you have a better pattern for this task, let me know.
 ```go
@@ -158,5 +158,5 @@ So this is how we run benchmarking for our Go code. I hope this was helpful and 
 
 ### References
 
-* https://www.youtube.com/watch?v=N3PWzBeLX2M
-* https://pkg.go.dev/testing#hdr-Benchmarks
+- [https://www.youtube.com/watch?v=N3PWzBeLX2M](https://www.youtube.com/watch?v=N3PWzBeLX2M)
+- [https://pkg.go.dev/testing#hdr-Benchmarks](https://pkg.go.dev/testing#hdr-Benchmarks)
